@@ -6,9 +6,9 @@ Add this to your Podfile:
 
 ```ruby
 target 'YourApp' do  
-  pod 'MapMetrics', '~> 0.0.1'  # Use the latest version  
+  pod 'MapMetrics-iOS', '~> 0.0.1'  # Use the latest version  
   # OR
-  pod 'MapMetrics', :git => 'https://github.com/MapMetrics/MapMetrics-iOS', :tag => '0.0.1'
+  pod 'MapMetrics-iOS', :git => 'https://github.com/MapMetrics/MapMetrics-iOS', :tag => '0.0.1'
 end
 ```
 
@@ -118,7 +118,7 @@ platform :ios, '12.0'
 
 target 'YourApp' do  
   use_frameworks!  
-  pod 'MapMetrics', '~> 0.0.1'  
+  pod 'MapMetrics-iOS', '~> 0.0.1'  
 
   post_install do |installer|  
     installer.pods_project.targets.each do |target|  
