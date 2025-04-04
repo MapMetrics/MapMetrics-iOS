@@ -1,0 +1,5 @@
+framework module MapMetrics {
+  umbrella header "MapMetrics.h"
+  export *
+  module * { export * }
+}
