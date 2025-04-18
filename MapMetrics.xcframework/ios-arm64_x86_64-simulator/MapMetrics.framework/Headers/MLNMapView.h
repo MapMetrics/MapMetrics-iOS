@@ -206,11 +206,25 @@ MLN_EXPORT
  - TODO: how to initialize an ``MLNMapView`` with a third-party tile source
  */
 - (instancetype)initWithFrame:(CGRect)frame styleURL:(nullable NSURL *)styleURL;
+/**
+ Initializes and returns a newly allocated map view with the specified frame
+ and style URL.
 
-//- TODO: initialize an ``MLNMapView`` with a custom style
-//- TODO: how to initialize an ``MLNMapView`` with a third-party tile source
+ @param frame The frame for the view, measured in points.
+ @param styleURL already built style light and dark, just pass true or false
+ @param token  The token provided by mapmetrics will be passed here.
+ 
+ @return An initialized map view.
 
-- (instancetype)initWithFrame:(CGRect)frame isDarkMode:(BOOL)isDarkMode;
+ #### Related examples
+
+ - TODO: initialize an ``MLNMapView`` with a custom style
+ - TODO: how to initialize an ``MLNMapView`` with a third-party tile source
+ */
+
+- (instancetype)initWithFrame:(CGRect)frame
+                        token:(NSString *)token
+                     styleURL:(NSString *)styleURL;
 
 // MARK: Accessing the Delegate
 
@@ -222,6 +236,7 @@ MLN_EXPORT
  annotations displayed on the map, such as the styles to apply to individual
  annotations.
  */
+
 @property (nonatomic, weak, nullable) IBOutlet id<MLNMapViewDelegate> delegate;
 
 // MARK: Configuring the Map’s Appearance
