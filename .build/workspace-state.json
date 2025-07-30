@@ -1,0 +1,24 @@
+{
+  "object" : {
+    "artifacts" : [
+      {
+        "kind" : "xcframework",
+        "packageRef" : {
+          "identity" : "mapmetrics-ios",
+          "kind" : "root",
+          "location" : "/Volumes/Data/XCFrameWork/Official/MapMetrics-iOS",
+          "name" : "MapMetrics-iOS"
+        },
+        "path" : "/Volumes/Data/XCFrameWork/Official/MapMetrics-iOS/MapMetrics.xcframework",
+        "source" : {
+          "type" : "local"
+        },
+        "targetName" : "MapMetrics"
+      }
+    ],
+    "dependencies" : [
+
+    ]
+  },
+  "version" : 6
+}
