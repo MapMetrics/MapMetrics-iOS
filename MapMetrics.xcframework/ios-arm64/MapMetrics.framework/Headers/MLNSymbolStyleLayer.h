@@ -1079,6 +1079,26 @@ MLN_EXPORT
 @property (nonatomic, null_resettable) NSExpression *symbolPlacement;
 
 /**
+ Internal use only
+ 
+ The default value of this property is an expression that evaluates to `NO`. Set
+ this property to `nil` to reset it to the default value.
+ 
+ You can set this property to an expression containing any of the following:
+ 
+ * Constant Boolean values
+ * Predefined functions, including mathematical and string operators
+ * Conditional expressions
+ * Variable assignments and references to assigned variables
+ * Step functions applied to the `$zoomLevel` variable
+ 
+ This property does not support applying interpolation functions to the
+ `$zoomLevel` variable or applying interpolation or step functions to feature
+ attributes.
+ */
+@property (nonatomic, null_resettable) NSExpression *symbolScreenSpace;
+
+/**
  Sorts features in ascending order based on this value. Features with lower sort
  keys are drawn and placed first.  When `iconAllowsOverlap` or
  `textAllowsOverlap` is `false`, features with a lower sort key will have
@@ -1721,8 +1741,10 @@ MLN_EXPORT
  `textVariableAnchor`, `textOffset`, and `textRadialOffset`. 
  
   ```json 
+ 
   { "text-variable-anchor-offset": ["top", [0, 4], "left", [3,0], "bottom", [1,
  1]] } 
+ 
   ``` 
  
   When the renderer chooses the `top` anchor, `[0, 4]` will be used for
@@ -1764,8 +1786,10 @@ MLN_EXPORT
  `textVariableAnchor`, `textOffset`, and `textRadialOffset`. 
  
   ```json 
+ 
   { "text-variable-anchor-offset": ["top", [0, 4], "left", [3,0], "bottom", [1,
  1]] } 
+ 
   ``` 
  
   When the renderer chooses the `top` anchor, `[0, 4]` will be used for
@@ -1968,6 +1992,7 @@ MLN_EXPORT
 
 /**
  Distance of halo to the icon outline. 
+ 
  The unit is in points only for SDF sprites that were created with a blur radius
  of 8, multiplied by the display density. I.e., the radius needs to be 16 for
  `@2x` sprites, etc.

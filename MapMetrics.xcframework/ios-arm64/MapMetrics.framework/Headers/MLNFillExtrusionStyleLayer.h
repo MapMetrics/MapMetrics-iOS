@@ -68,6 +68,30 @@ MLN_EXPORT
  */
 - (instancetype)initWithIdentifier:(NSString *)identifier source:(MLNSource *)source;
 
+// MARK: - Accessing the Layout Attributes
+
+/**
+ The distance from the corner that will be cut and replaced with rounded corner.
+ 
+ This property is measured in meters.
+ 
+ The default value of this property is an expression that evaluates to the float
+ `0`. Set this property to `nil` to reset it to the default value.
+ 
+ You can set this property to an expression containing any of the following:
+ 
+ * Constant numeric values no less than 0
+ * Predefined functions, including mathematical and string operators
+ * Conditional expressions
+ * Variable assignments and references to assigned variables
+ * Step functions applied to the `$zoomLevel` variable
+ 
+ This property does not support applying interpolation functions to the
+ `$zoomLevel` variable or applying interpolation or step functions to feature
+ attributes.
+ */
+@property (nonatomic, null_resettable) NSExpression *fillExtrusionRoundedCornerDistance;
+
 // MARK: - Accessing the Paint Attributes
 
 /**

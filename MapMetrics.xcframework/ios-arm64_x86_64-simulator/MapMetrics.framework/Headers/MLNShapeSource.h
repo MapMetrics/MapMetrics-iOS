@@ -21,7 +21,7 @@ typedef NSString *MLNShapeSourceOption NS_STRING_ENUM;
 
  This option corresponds to the
  <a
- href="https://mapmetrics.org/mapmetrics-style-spec/#sources-geojson-cluster"><code>cluster</code></a>
+ href="https://maplibre.org/maplibre-style-spec/#sources-geojson-cluster"><code>cluster</code></a>
  source property in the MapMetrics Style Spec.
 
  This option only affects point features within an ``MLNShapeSource`` object; it
@@ -43,6 +43,15 @@ FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionClus
  is ignored when creating an ``MLNComputedShapeSource`` object.
  */
 FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionClusterRadius;
+
+/**
+ An `NSNumber` object containing an integer; specifies the minimum number of points to form a
+ cluster if clustering is enabled. The default value is 2.
+
+ This option only affects point features within an ``MLNShapeSource`` object; it
+ is ignored when creating an ``MLNComputedShapeSource`` object.
+ */
+FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionClusterMinPoints;
 
 /**
  An `NSDictionary` object where the key is an `NSString`. The dictionary key will
@@ -70,7 +79,7 @@ FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionClus
 
  This option corresponds to the
  <a
- href="https://mapmetrics.org/mapmetrics-style-spec/#sources-geojson-clusterProperties"><code>clusterProperties</code></a>
+ href="https://maplibre.org/maplibre-style-spec/#sources-geojson-clusterProperties"><code>clusterProperties</code></a>
  source property in the MapMetrics Style Spec.
 
  This option only affects point features within an ``MLNShapeSource`` object; it
@@ -85,7 +94,7 @@ FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionClus
 
  This option corresponds to the
  <a
- href="https://mapmetrics.org/mapmetrics-style-spec/#sources-geojson-clusterMaxZoom"><code>clusterMaxZoom</code></a>
+ href="https://maplibre.org/maplibre-style-spec/#sources-geojson-clusterMaxZoom"><code>clusterMaxZoom</code></a>
  source property in the MapMetrics Style Spec.
 
  This option only affects point features within an ``MLNShapeSource`` object; it
@@ -100,7 +109,7 @@ FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption
 
  This option corresponds to the
  <a
- href="https://mapmetrics.org/mapmetrics-style-spec/#sources-geojson-minzoom"><code>minzoom</code></a>
+ href="https://maplibre.org/maplibre-style-spec/#sources-geojson-minzoom"><code>minzoom</code></a>
  source property in the MapMetrics Style Spec.
  */
 FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionMinimumZoomLevel;
@@ -112,7 +121,7 @@ FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionMini
 
  This option corresponds to the
  <a
- href="https://mapmetrics.org/mapmetrics-style-spec/#sources-geojson-maxzoom"><code>maxzoom</code></a>
+ href="https://maplibre.org/maplibre-style-spec/#sources-geojson-maxzoom"><code>maxzoom</code></a>
  source property in the MapMetrics Style Spec.
  */
 FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionMaximumZoomLevel;
@@ -124,7 +133,7 @@ FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionMaxi
  artifacts near tile edges and slower performance. The default value is 128.
 
  This option corresponds to the
- <a href="https://mapmetrics.org/mapmetrics-style-spec/#sources-geojson-buffer"><code>buffer</code></a>
+ <a href="https://maplibre.org/maplibre-style-spec/#sources-geojson-buffer"><code>buffer</code></a>
  source property in the MapMetrics Style Spec.
  */
 FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionBuffer;
@@ -136,7 +145,7 @@ FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionBuff
 
  This option corresponds to the
  <a
- href="https://mapmetrics.org/mapmetrics-style-spec/#sources-geojson-tolerance"><code>tolerance</code></a>
+ href="https://maplibre.org/maplibre-style-spec/#sources-geojson-tolerance"><code>tolerance</code></a>
  source property in the MapMetrics Style Spec.
  */
 FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionSimplificationTolerance;
@@ -149,10 +158,16 @@ FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionSimp
 
  This option corresponds to the
  <a
- href="https://mapmetrics.org/mapmetrics-style-spec/sources/#geojson-lineMetrics"><code>lineMetrics</code></a>
+ href="https://maplibre.org/maplibre-style-spec/sources/#geojson-lineMetrics"><code>lineMetrics</code></a>
  source property in the MapMetrics Style Spec.
  */
 FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionLineDistanceMetrics;
+
+/**
+ An `NSNumber` object containing a Boolean flag defining whether or not the fetched tiles for the
+ given source should be synchronously updated on the render thread. The default value is `NO`.
+ */
+FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionSynchronousUpdate;
 
 /**
  ``MLNShapeSource`` is a map content source that supplies vector shapes to be
@@ -168,7 +183,7 @@ FOUNDATION_EXTERN MLN_EXPORT const MLNShapeSourceOption MLNShapeSourceOptionLine
  use the ``MLNComputedShapeSource`` or ``MLNComputedShapeSource`` class.
 
  Each
- <a href="https://mapmetrics.org/mapmetrics-style-spec/#sources-geojson"><code>geojson</code></a>
+ <a href="https://maplibre.org/maplibre-style-spec/#sources-geojson"><code>geojson</code></a>
  source defined by the style JSON file is represented at runtime by an
  ``MLNShapeSource`` object that you can use to refine the map’s content and
  initialize new style layers. You can also add and remove sources dynamically
@@ -233,7 +248,7 @@ MLN_EXPORT
  for the source.
 
  This class supports the following options: ``MLNShapeSourceOptionClustered``,
- ``MLNShapeSourceOptionClusterRadius``,
+ ``MLNShapeSourceOptionClusterRadius``, ``MLNShapeSourceOptionClusterMinPoints``,
  ``MLNShapeSourceOptionMaximumZoomLevelForClustering``,
  ``MLNShapeSourceOptionMinimumZoomLevel``, ``MLNShapeSourceOptionMinimumZoomLevel``,
  ``MLNShapeSourceOptionBuffer``, and

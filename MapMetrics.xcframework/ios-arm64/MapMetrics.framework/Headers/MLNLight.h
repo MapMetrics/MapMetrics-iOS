@@ -97,7 +97,7 @@ MLN_EXPORT
  attributes.
 
  This property corresponds to the <a
- href="https://mapmetrics.org/mapmetrics-style-spec/light/#anchor"><code>anchor</code></a>
+ href="https://maplibre.org/maplibre-style-spec/light/#anchor"><code>anchor</code></a>
  light property in the MapMetrics Style Spec.
  */
 @property (nonatomic) NSExpression *anchor;
@@ -127,7 +127,7 @@ MLN_EXPORT
  feature attributes.
 
  This property corresponds to the <a
- href="https://mapmetrics.org/mapmetrics-style-spec/light/#position"><code>position</code></a>
+ href="https://maplibre.org/maplibre-style-spec/light/#position"><code>position</code></a>
  light property in the MapMetrics Style Spec.
 
  #### Related examples
@@ -164,7 +164,7 @@ MLN_EXPORT
  feature attributes.
 
  This property corresponds to the <a
- href="https://mapmetrics.org/mapmetrics-style-spec/light/#color"><code>color</code></a>
+ href="https://maplibre.org/maplibre-style-spec/light/#color"><code>color</code></a>
  light property in the MapMetrics Style Spec.
  */
 @property (nonatomic) NSExpression *color;
@@ -187,7 +187,7 @@ MLN_EXPORT
  feature attributes.
 
  This property corresponds to the <a
- href="https://mapmetrics.org/mapmetrics-style-spec/light/#color"><code>color</code></a>
+ href="https://maplibre.org/maplibre-style-spec/light/#color"><code>color</code></a>
  light property in the MapMetrics Style Spec.
  */
 @property (nonatomic) NSExpression *color;
@@ -219,7 +219,7 @@ MLN_EXPORT
  feature attributes.
 
  This property corresponds to the <a
- href="https://mapmetrics.org/mapmetrics-style-spec/light/#intensity"><code>intensity</code></a>
+ href="https://maplibre.org/maplibre-style-spec/light/#intensity"><code>intensity</code></a>
  light property in the MapMetrics Style Spec.
  */
 @property (nonatomic) NSExpression *intensity;

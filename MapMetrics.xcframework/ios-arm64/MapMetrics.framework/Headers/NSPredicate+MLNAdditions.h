@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
  from JSON data.
 
  The Foundation object is interpreted according to the
- [MapMetrics Style Spec](https://mapmetrics.org/mapmetrics-style-spec/expressions/).
+ [MapMetrics Style Spec](https://maplibre.org/maplibre-style-spec/expressions/).
  See the
  “[Predicates and Expressions](../predicates-and-expressions.html)”
  guide for a correspondence of operators and types between the style
@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
  An equivalent Foundation object that can be serialized as JSON.
 
  The Foundation object conforms to the
- [MapMetrics Style Spec](https://mapmetrics.org/mapmetrics-style-spec/expressions/).
+ [MapMetrics Style Spec](https://maplibre.org/maplibre-style-spec/expressions/).
  See the
  “[Predicates and Expressions](../predicates-and-expressions.html)”
  guide for a correspondence of operators and types between the style

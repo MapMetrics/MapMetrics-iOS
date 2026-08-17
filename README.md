@@ -6,9 +6,9 @@ Add this to your Podfile:
 
 ```ruby
 target 'YourApp' do  
-  pod 'MapMetrics-iOS', '~> 0.0.2'  # Use the latest version  
+  pod 'MapMetrics-iOS', '~> 1.0.0'  # Use the latest version  
   # OR
-  pod 'MapMetrics-iOS', :git => 'https://github.com/MapMetrics/MapMetrics-iOS', :tag => '0.0.2'
+  pod 'MapMetrics-iOS', :git => 'https://github.com/MapMetrics/MapMetrics-iOS', :tag => '1.0.0'
 end
 ```
 
@@ -17,6 +17,33 @@ Run:
 ```bash
 pod install  
 ```
+
+---
+
+## Configuration
+
+You can pass a style URL directly to `MLNMapView(frame:styleURL:)`, as the
+examples below do. Alternatively, add the keys to your app's `Info.plist` and use
+`MLNMapView(frame:isDarkMode:)`, which picks the matching style for you:
+
+| Info.plist key               | Purpose                                          |
+|------------------------------|--------------------------------------------------|
+| `MLNMapMetricsLightStyleURL` | style used when `isDarkMode` is `false`          |
+| `MLNMapMetricsDarkStyleURL`  | style used when `isDarkMode` is `true`           |
+| `MLNApiKey`                  | appended as `token` if the style URL has none    |
+| `MLNTileServerBaseURL`       | overrides the tile server base URL               |
+
+```swift
+mapView = MLNMapView(frame: view.bounds, isDarkMode: false)
+```
+
+If the relevant key is missing, the SDK logs a warning and falls back to the
+default style rather than rendering nothing.
+
+> **Note:** `isDarkMode` selects the *map style*. It is independent of the system
+> light/dark appearance — a dark basemap can be shown while iOS is in light mode.
+
+Credentials are never compiled into the SDK; they come from your app.
 
 ---
 
@@ -118,7 +145,7 @@ platform :ios, '12.0'
 
 target 'YourApp' do  
   use_frameworks!  
-  pod 'MapMetrics-iOS', '~> 0.0.2'  
+  pod 'MapMetrics-iOS', '~> 1.0.0'  
 
   post_install do |installer|  
     installer.pods_project.targets.each do |target|  

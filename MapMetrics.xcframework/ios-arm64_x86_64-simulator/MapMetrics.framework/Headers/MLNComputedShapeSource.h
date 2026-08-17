@@ -92,7 +92,7 @@ MLN_EXPORT
 /**
  Returns a custom shape data source initialized with an identifier, and a
  dictionary of options for the source according to the
- <a href="https://mapmetrics.org/mapmetrics-style-spec/#sources-geojson">style
+ <a href="https://maplibre.org/maplibre-style-spec/#sources-geojson">style
  specification</a>.
 
  This class supports the following options:
@@ -113,7 +113,7 @@ MLN_EXPORT
 /**
  Returns a custom shape data source initialized with an identifier, data source, and a
  dictionary of options for the source according to the
- <a href="https://mapmetrics.org/mapmetrics-style-spec/#sources-geojson">style
+ <a href="https://maplibre.org/maplibre-style-spec/#sources-geojson">style
  specification</a>.
 
  This class supports the following options:
